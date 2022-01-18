@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>House Price Predicton</title>
+  </head>
+  <body class="bg-dark">
+
+    <div class="container">
+      <div class="row">
+        <div class="card" style="height:100% ;width:100%;margin-top:50px;">
+          <div class="card-header" style="text-align:center">
+            <h1>House Price Prediction in Bangalore</h1>
+          </div>
+
+          <div class="card-body" >
+             <form action="{{ url_for('predict')}}"method="post" >
+               <div class="row">
+               <div class="col-md-6-form-group" style="text-align:center" >
+                   <label><b>Select the location</b></label>
+                    <select  style="width:150px;" id="location" name="location" required="required">
+                        {% for location in locations %}
+                        <option value="{{location}}" >{{location}}</option>
+                        {% endfor%}
+                    </select>
+               </div>
+                 <div class="col-md-6 form-group" style="margin-top:20px">
+                     <label> <b>Enter Number of BHK</b></label>
+                  <input type="integer" name="bhk" placeholder="BHK" required="required" />
+               </div>
+                 <div class="col-md-6 form-group" style="margin-top:20px" >
+                     <label><b>Enter Number of Bathrooms</b></label>
+                  <input type="integer" name="bath" placeholder="Bathrroms" required="required" />
+               </div>
+                <div class="col-md-6 form-group" style="margin-top:20px" >
+                  <label><b>Enter Square feet</b></label>
+                  <input type="float" name="sqft" placeholder="Square feet" required="required" />
+               </div>
+               <div class="col-md-6 form-group" style="margin-top:20px" >
+                   <label><b>Enter Number of Balcony</b></label>
+                  <input type="integer" name="balcony" placeholder="Balcony" required="required" />
+               </div>
+               </div>
+                <div style="text-align:center;margin-top:10px" >
+                    <button  type="submit" class="btn btn-primary btn-block btn-large" >Predict</button>
+                </div>
+
+             </form>
+              <div style="text-align:center">
+                  <h4>{{result}}</h4>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

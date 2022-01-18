@@ -1,0 +1,16 @@
+.bg {
+	font-size: 13px;
+	color: #808080;
+	height:100%
+}
+
+.bs {
+position: absolute;
+	top: 40%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:2000px;
+	height:2000px;
+	font-size: 13px;
+	color: #808080;
+}
