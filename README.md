@@ -8,3 +8,4 @@ Deployed to AWS
 link here :http://ec2-15-206-68-200.ap-south-1.compute.amazonaws.com:8080/
  
 Model: Linear Regression
+Python code repo link :https://github.com/chaithrab12/LinearRegression-EDA_Prediction
